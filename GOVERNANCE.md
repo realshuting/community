@@ -2,14 +2,29 @@
 
 This document defines governance policies for the [Kyverno and its sub-projects](https://github.com/kyverno#projects):
 
-- [Principles](#principles)
-- [Code of Conduct](#code-of-conduct)
-- [Vendor Neutrality](#vendor-neutrality)
-- [Meetings](#meetings)
-- [Roles and Process in the Kyverno Community](#project-roles)
-- [Conflict Resolutions](#conflict-resolutions)
-- [Changes](#changes)
-- [Credits](#credits)
+- [Kyverno Governance](#kyverno-governance)
+  - [Principles](#principles)
+  - [Code of Conduct](#code-of-conduct)
+  - [Vendor Neutrality](#vendor-neutrality)
+  - [Meetings](#meetings)
+  - [Project Roles](#project-roles)
+    - [Contributor Ladder](#contributor-ladder)
+    - [Summary of Roles](#summary-of-roles)
+      - [New Contributors](#new-contributors)
+      - [Contributors](#contributors)
+      - [Reviewers](#reviewers)
+      - [Maintainers](#maintainers)
+      - [Progression Process](#progression-process)
+      - [Benefits of Contribution](benefits-of-contribution)
+      - [Mapping Project Roles to GitHub Roles](#mapping-project-roles-to-github-roles)
+    - [Off-boarding Guidance](#off-boarding-guidance)
+  - [Maintainer Areas](#maintainer-areas)
+    - [Kyverno Projects](#kyverno-projects)
+    - [Projects areas](#projects-areas)
+  - [Kyverno Steering and Oversight Committee - KSOC](#kyverno-steering--oversight-committee-ksoc)
+  - [Conflict Resolutions](#conflict-resolutions)
+  - [Changes](#changes)
+  - [Credits](#credits)
 
 ## Principles
 
@@ -33,7 +48,7 @@ Kyverno follows the CNCF vendor neutrality guidelines documented at:
 
 Kyverno community meetings follow a defined [schedule](https://kyverno.io/community/#community-meetings).
 
-The maintainers may also have closed meetings to discuss security reports or Code of Conduct violations. Such meetings should be scheduled by any maintainer on receipt of a security issue or CoC report. All current Maintainers must be invited to such closed meetings, except for any maintainer who is accused of a CoC violation.
+The maintainers may also have closed meetings to discuss security reports or Code of Conduct (CoC) violations. Such meetings should be scheduled by any maintainer on receipt of a security issue or CoC report. All current Maintainers must be invited to such closed meetings, except for any maintainer who is accused of a CoC violation.
 
 ## Project Roles
 
@@ -43,84 +58,109 @@ This document highlights the roles and responsibilities for the Kyverno communit
 
 **Note:** Please make sure to read the CNCF [Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md).
 
+### Contributor Ladder
+
+Kyverno has defined a Contributor Ladder to recognize and promote contributors as they grow in involvement and impact. Each role is progressive, meaning that to move to the next level, a contributor must first have met the expectations of the previous level.
+
 ### Summary of Roles
 
-The table below summarizes project roles and responsibilities. Details are provided in the sections following the table:
+The table below summarizes project roles and responsibilities. Details are provided in the sections following the table. Additionally, the roles used in this document are custom roles mapped according to the [GitHub roles and responsibilities](https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization).
 
-| Role | Requirements | Ongoing Responsibilities | Defined by |
-| ------------ | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| Contributors | At least five (5) contributions to the project.   | None | CONTRIBUTORS.md                                   |
-| Code Owner   | At least ten (10) significant contributions and appointed by 2 maintainers. Highly experienced and active reviewer + contributor to a subproject. | Active contributions, assist maintainers, review and approve contributions.| Maintainers, [CODEOWNERS](https://help.github.com/en/articles/about-code-owners), GitHub organization member. |
-| Maintainer   | Highly experienced and active contributor + Kyverno Certification + Voted in by Kyverno maintainers. | Code Owner, monitor project growth, set direction and priorities for a subproject. | Voted in by the Kyverno maintainers, listing in `MAINTAINERS.md`, GitHub organization member, and repository owner. |
+| Role         | Description & Requirements                                                                                                                     | Ongoing Responsibilities                                               | Defined by                                                                                                          |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| New Contributors | Has made initial contributions and is beginning to engage in the community.                                                                              | None                                                                   | N/A                                                                                                     |
+| Contributors | After completion of five (5) contributions to the project or any sub-project community members are eligible for this role.                                                                              | None                                                                   | CONTRIBUTORS.md                                                                                                     |
+| Reviewers | Make regular contributions, engage in issues, and participate in the community by providing support to others as needed.                                                                              | Triage                                                                   | REVIEWERS.md                                                                                                     |
+| Maintainers | Owns areas of the project; responsible for approving changes and setting direction.                                                                              | Maintain                                                                   | MAINTAINERS.md
+
+#### New Contributors
+
+New Contributors are individuals who are new to our community and project and are looking to:
+- Engage with the Kyverno community (Slack, mailing list, discussions)
+- Make their first contributions to the project (issues, pull requests, discussion, documentation, support and conversations with other community members in Slack, blog writing, talks, and other content creation, etc.)
 
 #### Contributors
 
-Contributors are individuals who have made at least five (5) contributions to the project; by authoring PRs, commenting on issues and pull requests, and participating in community discussions on Slack or the mailing list.
+Contributors are individuals who have made five (5) contributions to the project. Contributions can be a combination of: authoring PRs, commenting on issues and pull requests, creating blog posts and/or tutorials about Kyverno, and participating in community discussions on Slack or the mailing list.
 
-**Checklist before becoming a Contributor**
+**Checklist for becoming a Contributor**
 
-- Have at least five (5) PRs successfully merged for any repositories under the Kyverno organization
-- Member of the kyverno channel on Kubernetes and/or CNCF Slack
-- Attended one (1) Contributors Meeting as documented
-- Registered for the Kyverno [mailing list](https://groups.google.com/g/kyverno)
+- Have at least five (5) documented contributions:
+  - Three (3) contributions must be successfully merged PRs for any repositories under the Kyverno organization.
+  - The remaining two (2) contributions can be a combination of: successfully merged PRs, extensive collaboration on issues and/or other PRs authored by others, blog posts and/or tutorials about Kyverno authored by the Contributor, and/or participation in community discussions and support of other community members on our `#kyverno` channels on Kubernetes and/or CNCF Slack
+- Member of the `#kyverno` channel on Kubernetes and/or CNCF Slack
+- Attended one (1) Community or Maintainer Meeting as documented during the time your contributions were made
+- Be a registered member of the Kyverno [mailing list](https://groups.google.com/g/kyverno)
 
 **Privileges of a Contributor**
 
 - Listed in the file in at least one (1) organization repository
-- Kyverno contributor badge issued
+- Kyverno Contributor badge issued via Credly
+- Can be trusted to contribute safely and effectively
 
 To join the Kyverno project as a Contributor create a Pull Request (PR) in the [Kyverno repository](https://github.com/kyverno/kyverno) with the following:
-1. Changes to add yourself to the [CONTRIBUTORS.md](https://github.com/kyverno/kyverno/blob/main/CONTRIBUTORS.md) file.
-2. Links to your prior contributions (at least five).
-3. Links to slack discussions, issue comments, etc.
+1. Changes to add yourself to the [CONTRIBUTORS.md](https://github.com/kyverno/kyverno/blob/main/CONTRIBUTORS.md) file
+2. Links to your prior contributions (at least three (3) successfully merged PRs + another two (2) contributions as listed above)
+3. Links to any contributions that were not PRs including slack discussions, issue comments, published blog posts, tutorials, etc.
+4. Date of attendance at a Community and/or Maintainer Meeting
 
-#### Code Owners
+#### Reviewers
 
-Code Owners are a special type of contributor and have _significantly_ contributed and maintain an _active_ status within the organization. They can have issues and PRs assigned to them and are responsible for providing PR reviews. Unlike Contributors, Code Owners have responsibilities and must maintain an active status defined below to remain a Code Owner.
+Reviewers are individuals who have already been accepted and are listed in the CONTRIBUTOR.md.
 
-**Checklist before becoming a Code Owner**
+They make regular contributions, engage in issues, and participate in the community by providing support to others as needed. Reviewers are appointed by Maintainers based on their dedication and participation in the project.
 
-- Have at least ten (10) significant PRs successfully merged for any combination of repositories under the Kyverno organization
-- Member of the kyverno channel on Kubernetes and/or CNCF Slack
-- Attended five (5) Contributors Meetings as documented
-- Registered for the Kyverno [mailing list](https://groups.google.com/g/kyverno)
-- Create a pull request to add self to `CODEOWNERS` file in at least one (1) repository
-- Attained a minimum of two (2) positive votes from maintainers
-- Respond to reviews from maintainers on pull requests
+**Checklist for becoming a Reviewer**
 
-**Responsibilities of a Code Owner**
+- Have completed all steps in the above mentioned Contributor guidelines
+- Reviewed and contributed to multiple PRs across the codebase
+- Active participation in community meetings and/or design discussions
+- Clear communication and collaborative approach
+- Demonstrates both deep understanding of the codebase and consistent high-quality contributions
+- Actively reviews code from other contributors
+- May be responsible for specific areas of the codebase as assigned by the Maintainer team (designated in CODEOWNERS)
+- Appointed or nominated by a Maintainer
 
-- Maintain an active status in a three (3) month period to include any of the following:
-  - One (1) PR filed
-  - Any request for PR review responded to
-  - One (1) issue or PR responded to
-  - One (1) Slack thread responded to
-  - Two (2) attendance at weekly Contributors Meetings
+**Responsibilities of a Reviewer**
 
-**Privileges of a Code Owner**
+- Perform detailed code reviews and provide constructive feedback
+- Ensure submitted code adheres to project style, testing, and documentation standards
+- Collaborate with contributors to help improve pull requests before merging
+- Communicate with Maintainers about any issues you encounter
+- Participate actively in design discussions and community meetings
+- Help triage issues and provide support in GitHub, Slack, or discussion forums
+- Maintain awareness of project goals and architecture to ensure alignment
+- Serve as a mentor to newer contributors
+- Keep up-to-date with project changes and ongoing initiatives
+- Represent the project in the community with professionalism and respect
 
-- Listed as an organization member
-- Listed in `CODEOWNERS` in at least one (1) repository
-- Kyverno contributor badge issued
-- Have issues assigned to them
-- Have PRs assigned to them
 
-**On-boarding Criteria**
+**Privileges of a Reviewer**
 
-- Voted in by a majority of current maintainers, raised in a PR by the proposed member to add themselves to `CODEOWNERS`, during a voting period lasting seven (7) days
-
-**Off-boarding Criteria**
-
-- Voted out by a majority of current maintainers via a GitHub issue during a voting period lasting seven (7) days. A vote may be called by any maintainer after the point at which the responsibilities have not been met. A positive vote will result in removal from `CODEOWNERS` and from organization membership.
+- Triage access to the repository (e.g., labeling, assigning issues/PRs)
+- Ability to formally approve pull requests (/lgtm, /approve where applicable)
+- May be added to the CODEOWNERS file for designated areas of the codebase
+- Recognition in the REVIEWERS.md and governance documents
+- Eligibility for nomination to Maintainer roles
+- Early access to roadmap discussions and design proposals
+- Greater influence in shaping technical direction and priorities
+- Invited to participate in exclusive contributor discussions (e.g., Maintainer syncs)
 
 #### Maintainers
 
-Maintainers are individuals who go beyond the status of code owner who have shown good technical judgement in feature design/development in the past. Maintainers have overall knowledge of the project and features in the project. They can read, clone, and push to the repository. They can also manage issues, pull requests, and some repository settings.
+Maintainers are individuals who have shown good technical judgement in feature design/development in the past. Maintainers have overall knowledge of the project and features in the project. They can read, clone, and push to the repository. They can also manage issues, pull requests, and some repository settings.
 
-[Maintainers](https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization#repository-access-for-each-permission-level) are the technical authority for a subproject and are considered leaders for the organization as a whole. They must have demonstrated both good judgement and responsibility towards the health of the subproject. Maintainers must set technical direction and make or approve design decisions for their subproject, either directly or through delegation of these responsibilities. Unlike contributors and code owners, maintainers have the highest degree of responsibility and ownership for the project. Maintainer status may be subject to a vote and, if the minimum level of activity is not maintained, may be moved to an _emeritus_ status.
+Maintainers are the technical authority for a subproject and are considered leaders for the organization as a whole. They must have demonstrated both good judgement and responsibility towards the health of the subproject. Maintainers must set technical direction and make or approve design decisions for their subproject, either directly or through delegation of these responsibilities. Unlike contributors, maintainers have the highest degree of responsibility and ownership for the project. Maintainer status may be subject to a vote and, if the minimum level of activity is not maintained, may be moved to an _emeritus_ status.
 
 **Checklist before becoming a Maintainer:**
 
+- Have at least eight (8) to ten (10) significant PRs successfully merged for any combination of repositories under the Kyverno organization
+- Member of the `#kyverno` and `#kyverno-dev` channels on Kubernetes Slack workspace and the `#kyverno` channel on the CNCF Slack workspace
+- Regularly attends Kyverno [Maintainers and Community Meetings](https://kyverno.io/community/#community-meetings)
+- Registered for the Kyverno [mailing list](https://groups.google.com/g/kyverno)
+- Create a pull request to add self to `CODEOWNERS` file in at least one (1) repository
+- Attained the super majority vote (50% + Nominator) from maintainers
+- Respond to reviews from maintainers on pull requests
 - Proficient in GitHub, YAML, Markdown, and Git
 - Exhibits strong attention to detail when reviewing commits and provides generous guidance and feedback
 - Helps others achieve their goals with open-source and community contributions
@@ -131,12 +171,10 @@ Maintainers are individuals who go beyond the status of code owner who have show
 - Makes contributions that are considered notable
 - Demonstrates ability to help troubleshoot and resolve user issues
 - Has achieved the Kyverno Certification or demonstrated an equivalent mastery of Kyverno
-- Meets or exceeds all the requirements of a Code Owner
-- Maintains an active status as a Code Owner for a period of six (6) months
+- Maintains a consistent level of activity with contributions to the project
 
 **Responsibilities of a Maintainer**
 
-- All the responsibilities of a Code Owner
 - Tracks and ensures adequate health of the modules and subprojects they are in charge of
 - Ensures adequate test coverage to confidently release new features and fixes
 - Ensures that tests are passing reliably (i.e. not flaky) and are fixed when they fail
@@ -150,13 +188,17 @@ Maintainers are individuals who go beyond the status of code owner who have show
 
 **Privileges of a Maintainer**
 
-- Privileges of a Code Owner
+- Listed as an organization member
+- Listed in `CODEOWNERS` in at least one (1) repository
+- Member of the https://lists.cncf.io/g/cncf-kyverno-maintainers mailing list
+- Have issues assigned to them
+- Have PRs assigned to them
 - Receives a Kyverno Maintainer Badge
 - Listed in `MAINTAINERS.md`
 
 **On-boarding Criteria**
 
-- Voted in by a majority of current maintainers, raised in a PR by the proposed member to add themselves to `MAINTAINERS.md`, during a voting period lasting seven (7) days
+- Nominated by current Maintainer and voted in by a majority of current maintainers or raised in a PR by the proposed member to add themselves to `MAINTAINERS.md`, during a voting period lasting at least three (3) working days
 
 **Off-boarding Criteria**
 
@@ -171,27 +213,80 @@ The off-boarding process includes the following steps:
 - If the candidate for removal states plans to continue participating, another 6 months will be granted to the candidate to make contributions and the new cycle starts. No action is taken and this process terminates.
 - If the candidate fails to meet the criteria during the second attempt to make contributions, the off-boarding process continues.
 - A pull request (PR) proposing movement of the candidate is sent, initiating the public voting phase.
-- The vote passes if a majority of current maintainers vote yes during a voting period lasting seven (7) days.
+- The vote passes if a majority of current maintainers vote yes during a voting period lasting five (5) working days.
 - A positive vote will result in movement to an _emeritus_ status within `MAINTAINERS.md` and removal from organization membership.
 
-#### Admins
+#### Progression Process
 
-These are persons who have full access to the project, including sensitive and destructive actions like managing security or deleting a repository. Admins can read, clone, and push to this repository. They can also manage issues, pull requests, and repository settings, including adding collaborators.
+Progression to a new role requires an appointment or nomination by an existing Maintainer. All role appointments and nominations are subject to a vote.
+- All role appointments, nominations, and votes must be documented in a GitHub issue or pull request
+- Contributions across any Kyverno sub-projects count toward progression. The list of acceptable contributions is listed above.
+
+#### Benefits of the Contributor Ladder
+
+The Contribution Ladder is meant to provide clear expectations and transparency for how to grow within the project and ensure that all contributors are recognized for their efforts, commitment, and support of our community ensuring contributor growth and project sustainability.
 
 #### Mapping Project Roles to GitHub Roles
 
 The roles used in this document are custom roles mapped according to the [GitHub roles and responsibilities](https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization).
 
-| Project Role   | GitHub Role    |
-| -------------- | -------------- |
-| Contributor    | Triage         |
-| Code Owner     | Write          |
-| Maintainer     | Maintain       |
-| Administrator  | Admin          |
+| Project Role       | GitHub Role    |
+| ------------------ | -------------- |
+| New Contributor    | None           |
+| Contributor        | None           |
+| Reviewer           | Write          |
+| Maintainer         | Maintain       |
 
 ### Off-boarding Guidance
 
 If any of the above roles hasn't contributed in any phases (including, but not limited to: code changes, doc updates, issue discussions) in 3 months, the administrator needs to inform the member and remove one's roles and GitHub permissions.
+
+## Maintainer Areas
+
+The Kyverno projects code base cover many areas and project maintainers are not required to know everything about a project.
+For this reason, maintainers can be specific to one (or more) area of the code base, every area representing a specific aspect.
+
+### Kyverno Projects
+
+- [Kyverno](https://github.com/kyverno/kyverno)
+- [Kyverno Website](https://github.com/kyverno/website)
+- [Kyverno Policies](https://github.com/kyverno/policies)
+- [Kyverno JSON](https://github.com/kyverno/kyverno-json)
+- [Kyverno Chainsaw](https://github.com/kyverno/chainsaw)
+- [Kyverno Playground](https://github.com/kyverno/playground)
+- [Kyverno Policy Reporter](https://github.com/kyverno/policy-reporter)
+- [Kyverno Reports Server](https://github.com/kyverno/reports-server)
+- [Kyverno Backstage Policy Reporter](https://github.com/VELUX/backstage-policy-reporter-plugin)
+
+### Projects areas
+
+This list is not exhaustive and is subject to modifications as the project evolves over time.
+
+| Project | Area | Description |
+|---|---|---|
+| Kyverno | `website` | Kyverno projects website and docs |
+| Kyverno | `policies-catalog` | Kyverno currated policies |
+| Kyverno | `helm-chart` | Kyverno Helm chart |
+| Kyverno | `engine` | Kyverno policy engine |
+| Kyverno | `cli` | Kyverno CLI |
+| Kyverno | `report-system` | Kyverno reporting system |
+| Kyverno JSON | -- | Kyverno JSON project |
+| Kyverno Chainsaw | -- | Kyverno Chainsaw project |
+| Kyverno Playground | `frontend` | Kyverno Playground frontend |
+| Kyverno Playground | `backend` | Kyverno Playground backend |
+| Kyverno Playground | `helm-chart` | Kyverno Playground Helm chart |
+| Kyverno Policy Reporter | `frontend` | Kyverno Policy Reporter frontend |
+| Kyverno Policy Reporter | `backend` | Kyverno Policy Reporter backend |
+| Kyverno Policy Reporter | `helm-chart` | Kyverno Policy Reporter Helm chart |
+| Kyverno Reports Server | -- | Kyverno Reports Server project |
+| Kyverno Backstage Policy Reporter | `frontend` | Kyverno Backstage Policy Reporter frontend |
+| Kyverno Backstage Policy Reporter | `backend` | Kyverno Backstage Policy Reporter backend |
+
+## Kyverno Steering & Oversight Committee (KSOC)
+
+The full bylaws and membership structure of the Kyverno Steering & Oversight Committee (KSOC) are documented in the dedicated KSOC governance file:
+
+👉 [KYVERNO_STEERING_OVERSIGHT_COMMITTEE.md](./KYVERNO_STEERING_OVERSIGHT_COMMITTEE.md)
 
 
 ## Conflict Resolutions

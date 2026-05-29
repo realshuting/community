@@ -14,6 +14,8 @@ The security response team is responsible for triaging and coordinating fixes fo
 
 All team members are subscribed to `kyverno-security@googlegroups.com`. Reports sent to that address reach the full team simultaneously.
 
+When a report is received, one team member acts as the coordinator: they acknowledge the report, assess severity, and route the issue to the maintainer best placed to fix it based on the affected component. There is no fixed rotation; the coordinator for a given report is whoever picks it up first from the shared inbox.
+
 ## Security bulletins
 
 For information regarding the security of this project please join our [Slack channel](https://slack.k8s.io/#kyverno).
